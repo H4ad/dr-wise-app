@@ -3,4 +3,5 @@
     <string name="splash_screen_description">Splash Screen Image</string>
 
     <string name="shared_preferences_name">br.com.wiseonsoft</string>
+    <string name="api_token_key">API_TOKEN_KEY</string>
 </resources>
