@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".LoginActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/img_wise"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/wise_logo2"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/img_wise"
+        android:hint="@string/enter_email"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:inputType="textEmailAddress"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_email"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:hint="@string/enter_password"
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:inputType="textPassword"/>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_password"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_account"
+            android:textSize="12sp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/text_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:text="@string/click_here"
+            android:textSize="12sp"
+            android:textColor="@color/color_accent"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_enter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/btn_text_enter"
+        android:textSize="22sp"
+        android:textColor="@color/background_light"
+        android:background="@color/color_accent"/>
+
+</RelativeLayout>
