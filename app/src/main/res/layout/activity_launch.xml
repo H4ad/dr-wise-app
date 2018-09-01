@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".LaunchActivity">
 
-    <ImageView
-        android:layout_height="match_parent"
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="match_parent"
-        android:background="#FAFAFA"
+        android:layout_height="match_parent"
         android:scaleType="centerInside"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:contentDescription="@string/splash_screen_description"
-        android:src="@drawable/wise_logo"/>
+        android:src="@drawable/wise_logo" />
 
 </RelativeLayout>
