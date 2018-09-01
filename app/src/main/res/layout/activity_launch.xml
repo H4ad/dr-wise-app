@@ -9,6 +9,7 @@
     <ImageView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:background="#FAFAFA"
         android:scaleType="centerInside"
         android:contentDescription="@string/splash_screen_description"
         android:src="@drawable/wise_logo"/>
