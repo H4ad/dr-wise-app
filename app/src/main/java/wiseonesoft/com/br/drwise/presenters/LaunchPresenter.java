@@ -1,6 +1,5 @@
 package wiseonesoft.com.br.drwise.presenters;
 
-import wiseonesoft.com.br.drwise.R;
 import wiseonesoft.com.br.drwise.interfaces.LaunchMVP;
 import wiseonesoft.com.br.drwise.security.SecurityPreferences;
 
@@ -25,6 +24,6 @@ public class LaunchPresenter implements LaunchMVP.Presenter {
 
     @Override
     public boolean hasLogged() {
-        return !securityPreferences.getString(view.getString(R.string.api_token_key)).isEmpty();
+        return !securityPreferences.getString(view.getTokenKey()).isEmpty();
     }
 }

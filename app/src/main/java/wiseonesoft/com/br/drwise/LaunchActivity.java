@@ -5,12 +5,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 
+import butterknife.BindString;
 import wiseonesoft.com.br.drwise.interfaces.LaunchMVP;
 import wiseonesoft.com.br.drwise.presenters.LaunchPresenter;
 
 public class LaunchActivity extends Activity  implements LaunchMVP.View {
 
-     LaunchMVP.Presenter presenter;
+    LaunchMVP.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,11 @@ public class LaunchActivity extends Activity  implements LaunchMVP.View {
     @Override
     public Context getContext() {
         return this.getBaseContext();
+    }
+
+    @Override
+    public String getTokenKey() {
+        return getString(R.string.api_token_key);
     }
 
     @Override

@@ -12,9 +12,9 @@ public interface LaunchMVP {
         Context getContext();
 
         /**
-         * Retorna uma String do arquivo strings.xml
+         * Retorna a key para armazenar o Token da API do arquivo strings.xml
          */
-        String getString(int id);
+        String getTokenKey();
 
         /**
          * Exibe a Activity de Login
