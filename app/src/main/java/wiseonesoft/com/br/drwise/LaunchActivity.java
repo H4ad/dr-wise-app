@@ -2,14 +2,14 @@ package wiseonesoft.com.br.drwise;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import butterknife.BindString;
 import wiseonesoft.com.br.drwise.interfaces.LaunchMVP;
 import wiseonesoft.com.br.drwise.presenters.LaunchPresenter;
 
-public class LaunchActivity extends Activity  implements LaunchMVP.View {
+public class LaunchActivity extends Activity implements LaunchMVP.View {
 
     LaunchMVP.Presenter presenter;
 
@@ -36,7 +36,8 @@ public class LaunchActivity extends Activity  implements LaunchMVP.View {
 
     @Override
     public void showLoginActivity() {
-
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
     @Override
