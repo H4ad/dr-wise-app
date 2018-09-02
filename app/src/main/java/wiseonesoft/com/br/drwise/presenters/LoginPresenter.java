@@ -11,7 +11,7 @@ public class LoginPresenter implements LoginMVP.Presenter {
     }
 
     @Override
-    public void makeLogin() {
+    public void doLogin() {
 
     }
 }

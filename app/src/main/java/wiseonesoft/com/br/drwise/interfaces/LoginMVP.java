@@ -23,11 +23,24 @@ public interface LoginMVP {
          * Exibe a activity para se registrar
          */
         void showRegisterActivity();
+
+        /**
+         * Exibe a activity principal
+         */
+        void showMainActivity();
+
+        /**
+         * Faz o login do usuário
+         */
+        void doLogin();
     }
 
     interface Presenter {
 
-        void makeLogin();
+        /**
+         * Faz o login do usuário
+         */
+        void doLogin();
 
     }
 

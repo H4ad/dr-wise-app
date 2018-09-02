@@ -9,6 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+
 import wiseonesoft.com.br.drwise.interfaces.LoginMVP;
 import wiseonesoft.com.br.drwise.presenters.LoginPresenter;
 
@@ -49,12 +50,20 @@ public class LoginActivity extends Activity implements LoginMVP.View {
     }
 
     @Override
-    @OnClick(R.id.btn_enter)
     public void showErrorMessage(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT);
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     @OnClick(R.id.text_register)
     public void showRegisterActivity() {}
+
+    @Override
+    public void showMainActivity() {}
+
+    @Override
+    @OnClick(R.id.btn_enter)
+    public void doLogin() {
+        presenter.doLogin();
+    }
 }
