@@ -4,10 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import wiseonesoft.com.br.drwise.R;
+import wiseonesoft.com.br.drwise.utils.ApplicationConstants;
 
 public class SecurityPreferences {
 
-    private final static String DEFAULT_STRING = "";
     private final SharedPreferences mSharedPreferences;
 
     public SecurityPreferences(Context context) {
@@ -30,6 +30,6 @@ public class SecurityPreferences {
      */
     public String getString(String key)
     {
-        return this.mSharedPreferences.getString(key, SecurityPreferences.DEFAULT_STRING);
+        return this.mSharedPreferences.getString(key, ApplicationConstants.EMPTY_STRING);
     }
 }
