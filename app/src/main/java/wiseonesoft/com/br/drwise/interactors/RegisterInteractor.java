@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import retrofit2.Retrofit;
 import wiseonesoft.com.br.drwise.interactors.payloads.RegisterPayload;
+import wiseonesoft.com.br.drwise.interactors.proxys.EmptyProxy;
 import wiseonesoft.com.br.drwise.interactors.proxys.ErrorProxy;
 import wiseonesoft.com.br.drwise.repositorys.AuthRepository;
 import wiseonesoft.com.br.drwise.utils.ApplicationConstants;
@@ -22,7 +23,7 @@ public class RegisterInteractor extends InteractorBase implements RegisterMVP.In
 
     @SuppressLint("CheckResult")
     @Override
-    public void doRegister(RegisterPayload registerPayload, ObserverBase<ErrorProxy> observerBase) {
+    public void doRegister(RegisterPayload registerPayload, ObserverBase<EmptyProxy> observerBase) {
         authRepository.doRegister(registerPayload)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(observerBase);

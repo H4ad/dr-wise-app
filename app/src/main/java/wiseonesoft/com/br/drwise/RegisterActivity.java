@@ -13,6 +13,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import wiseonesoft.com.br.drwise.interfaces.RegisterMVP;
+import wiseonesoft.com.br.drwise.presenters.RegisterPresenter;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterMVP.View {
 
@@ -35,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterMVP.V
     AppCompatTextView textRegisterView;
 
     private Unbinder unbinder;
+    private RegisterMVP.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterMVP.V
         setContentView(R.layout.activity_register);
 
         unbinder = ButterKnife.bind(this);
+        presenter = new RegisterPresenter(this);
     }
 
     @Override
@@ -52,7 +55,37 @@ public class RegisterActivity extends AppCompatActivity implements RegisterMVP.V
 
     @OnClick(R.id.card_register)
     public void onViewClicked() {
+        if(getName().isEmpty())
+        {
+            showMessage("É necessário digitar um nome!");
+            return;
+        }
 
+        if(getEmail().isEmpty())
+        {
+            showMessage("É necessário digitar um email!");
+            return;
+        }
+
+        if(getPassword().isEmpty())
+        {
+            showMessage("É necessário digitar uma senha!");
+            return;
+        }
+
+        if(getPasswordConfirmation().isEmpty())
+        {
+            showMessage("É necessário digitar a confirmação da senha!");
+            return;
+        }
+
+        if(!getPasswordConfirmation().equals(getPassword()))
+        {
+            showMessage("A confirmação da senha precisa ser igual à senha!");
+            return;
+        }
+
+        presenter.doRegister();
     }
 
     @Override
