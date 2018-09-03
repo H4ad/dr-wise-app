@@ -10,9 +10,9 @@ import wiseonesoft.com.br.drwise.interactors.proxys.TokenProxy;
 import wiseonesoft.com.br.drwise.interfaces.LoginMVP;
 import wiseonesoft.com.br.drwise.repositorys.AuthRepository;
 import wiseonesoft.com.br.drwise.utils.ApplicationConstants;
-import wiseonesoft.com.br.drwise.utils.InteractorUtil;
+import wiseonesoft.com.br.drwise.utils.InteractorBase;
 
-public class LoginInteractor extends InteractorUtil implements LoginMVP.Interactor {
+public class LoginInteractor extends InteractorBase implements LoginMVP.Interactor {
 
     AuthRepository authRepository;
 
