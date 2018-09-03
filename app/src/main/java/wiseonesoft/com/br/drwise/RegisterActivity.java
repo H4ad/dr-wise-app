@@ -76,8 +76,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterMVP.V
     }
 
     @Override
-    public void showErrorMessage(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+    public void showMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -96,5 +96,10 @@ public class RegisterActivity extends AppCompatActivity implements RegisterMVP.V
     public void showLoginActivity() {
         startActivity(new Intent(this, LoginActivity.class));
         finish();
+    }
+
+    @Override
+    public void showSuccessfullMessage() {
+        showMessage(getString(R.string.sucessful_create_user));
     }
 }

@@ -1,6 +1,7 @@
 package wiseonesoft.com.br.drwise.interfaces;
 
 import wiseonesoft.com.br.drwise.interactors.payloads.RegisterPayload;
+import wiseonesoft.com.br.drwise.interactors.proxys.EmptyProxy;
 import wiseonesoft.com.br.drwise.interactors.proxys.ErrorProxy;
 import wiseonesoft.com.br.drwise.utils.ObserverBase;
 
@@ -47,9 +48,19 @@ public interface RegisterMVP {
          * Exibe a activity de login
          */
         void showLoginActivity();
+
+        /**
+         * Exibe mensagem de que foi criado com sucesso um usuário
+         */
+        void showSuccessfullMessage();
     }
 
     interface Presenter {
+
+        /**
+         * Registra um usuário
+         */
+        void doRegister();
 
 
     }
@@ -59,7 +70,7 @@ public interface RegisterMVP {
         /**
          * Registra um usuário
          */
-        void doRegister(RegisterPayload registerPayload, ObserverBase<ErrorProxy> observerBase);
+        void doRegister(RegisterPayload registerPayload, ObserverBase<EmptyProxy> observerBase);
 
     }
 }

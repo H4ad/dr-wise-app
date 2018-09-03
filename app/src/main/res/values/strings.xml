@@ -19,4 +19,5 @@
     <string name="seu_nome">Seu nome</string>
     <string name="register">Registrar-se</string>
     <string name="registering">Registrando...</string>
+    <string name="sucessful_create_user">Usuário criado com sucesso!</string>
 </resources>
