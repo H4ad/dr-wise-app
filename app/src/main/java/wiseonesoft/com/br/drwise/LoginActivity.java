@@ -12,6 +12,7 @@ import butterknife.Unbinder;
 
 import wiseonesoft.com.br.drwise.interfaces.LoginMVP;
 import wiseonesoft.com.br.drwise.presenters.LoginPresenter;
+import wiseonesoft.com.br.drwise.security.SecurityPreferences;
 
 public class LoginActivity extends Activity implements LoginMVP.View {
 
@@ -47,6 +48,16 @@ public class LoginActivity extends Activity implements LoginMVP.View {
     @Override
     public String getPassword() {
         return editPassword.getText().toString();
+    }
+
+    @Override
+    public String getApiKey() {
+        return getString(R.string.api_token_key);
+    }
+
+    @Override
+    public SecurityPreferences getSecurityPreferences() {
+        return new SecurityPreferences(this);
     }
 
     @Override

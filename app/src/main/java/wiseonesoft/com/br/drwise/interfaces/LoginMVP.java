@@ -4,6 +4,7 @@ import io.reactivex.Observer;
 
 import wiseonesoft.com.br.drwise.interactors.payloads.LoginPayload;
 import wiseonesoft.com.br.drwise.interactors.proxys.TokenProxy;
+import wiseonesoft.com.br.drwise.security.SecurityPreferences;
 
 public interface LoginMVP {
 
@@ -18,6 +19,16 @@ public interface LoginMVP {
          * Retorna o valor digitado para a senha
          */
         String getPassword();
+
+        /**
+         * Retorna a key da API
+         */
+        String getApiKey();
+
+        /**
+         * Pega o security preferences da view
+         */
+        SecurityPreferences getSecurityPreferences();
 
         /**
          * Exibe uma mensagem de erro ao usuário
