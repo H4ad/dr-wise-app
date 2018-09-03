@@ -1,6 +1,7 @@
 package wiseonesoft.com.br.drwise;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
@@ -71,6 +72,7 @@ public class LoginActivity extends Activity implements LoginMVP.View {
     @Override
     @OnClick(R.id.text_register)
     public void showRegisterActivity() {
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     @Override
