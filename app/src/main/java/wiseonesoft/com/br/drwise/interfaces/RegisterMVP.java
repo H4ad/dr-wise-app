@@ -1,5 +1,9 @@
 package wiseonesoft.com.br.drwise.interfaces;
 
+import wiseonesoft.com.br.drwise.interactors.payloads.RegisterPayload;
+import wiseonesoft.com.br.drwise.interactors.proxys.ErrorProxy;
+import wiseonesoft.com.br.drwise.utils.ObserverBase;
+
 public interface RegisterMVP {
 
     interface View {
@@ -27,7 +31,7 @@ public interface RegisterMVP {
         /**
          * Exibe uma mensagem de erro
          */
-        void showErrorMessage(String error);
+        void showMessage(String error);
 
         /**
          * Desativa o botão de registrar
@@ -51,6 +55,11 @@ public interface RegisterMVP {
     }
 
     interface Interactor {
+
+        /**
+         * Registra um usuário
+         */
+        void doRegister(RegisterPayload registerPayload, ObserverBase<ErrorProxy> observerBase);
 
     }
 }
