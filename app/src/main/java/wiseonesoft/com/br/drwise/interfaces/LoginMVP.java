@@ -1,5 +1,10 @@
 package wiseonesoft.com.br.drwise.interfaces;
 
+import io.reactivex.Observer;
+
+import wiseonesoft.com.br.drwise.interactors.payloads.LoginPayload;
+import wiseonesoft.com.br.drwise.interactors.proxys.TokenProxy;
+
 public interface LoginMVP {
 
     interface View {
@@ -45,6 +50,11 @@ public interface LoginMVP {
     }
 
     interface Interactor {
+
+        /**
+         * Faz a requisição na api pelo token
+         */
+        void getToken(LoginPayload loginPayload, Observer<TokenProxy> observable);
 
     }
 }
