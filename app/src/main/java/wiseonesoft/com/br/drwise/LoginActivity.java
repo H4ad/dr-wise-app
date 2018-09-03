@@ -75,6 +75,17 @@ public class LoginActivity extends Activity implements LoginMVP.View {
     @Override
     @OnClick(R.id.btn_enter)
     public void doLogin() {
+        if(getEmail().isEmpty()) {
+            showErrorMessage(getString(R.string.error_email_required));
+            return;
+        }
+
+        if(getPassword().isEmpty())
+        {
+            showErrorMessage(getString(R.string.error_password_required));
+            return;
+        }
+
         presenter.doLogin();
     }
 }
