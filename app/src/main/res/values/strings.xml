@@ -12,4 +12,10 @@
     <string name="error_email_required">É necessário digitar um e-mail antes!</string>
     <string name="error_password_required">É necessário digitar uma senha antes!</string>
     <string name="authenticating">Autenticando...</string>
+    <string name="register_text">Para registrar-se é simples, basta digitar as seguintes informações</string>
+    <string name="e_mail">E-mail</string>
+    <string name="digite_novamente_a_senha">Digite novamente a senha</string>
+    <string name="senha">Senha</string>
+    <string name="seu_nome">Seu nome</string>
+    <string name="register">Registrar-se</string>
 </resources>
