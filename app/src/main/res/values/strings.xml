@@ -11,4 +11,5 @@
     <string name="dont_have_account">Não possui conta ?</string>
     <string name="error_email_required">É necessário digitar um e-mail antes!</string>
     <string name="error_password_required">É necessário digitar uma senha antes!</string>
+    <string name="authenticating">Autenticando...</string>
 </resources>

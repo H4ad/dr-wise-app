@@ -49,5 +49,6 @@ public class LoginPresenter implements LoginMVP.Presenter {
 
             }
         });
+        view.enableBtnEnter();
     }
 }

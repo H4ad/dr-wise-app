@@ -2,6 +2,7 @@ package wiseonesoft.com.br.drwise;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.widget.Toast;
 
@@ -9,7 +10,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-
 import wiseonesoft.com.br.drwise.interfaces.LoginMVP;
 import wiseonesoft.com.br.drwise.presenters.LoginPresenter;
 import wiseonesoft.com.br.drwise.security.SecurityPreferences;
@@ -21,6 +21,9 @@ public class LoginActivity extends Activity implements LoginMVP.View {
 
     @BindView(R.id.edit_password)
     AppCompatEditText editPassword;
+
+    @BindView(R.id.btn_enter)
+    AppCompatButton btnEnter;
 
     LoginMVP.Presenter presenter;
     Unbinder unbinder;
@@ -67,25 +70,40 @@ public class LoginActivity extends Activity implements LoginMVP.View {
 
     @Override
     @OnClick(R.id.text_register)
-    public void showRegisterActivity() {}
+    public void showRegisterActivity() {
+    }
 
     @Override
-    public void showMainActivity() {}
+    public void showMainActivity() {
+    }
 
     @Override
     @OnClick(R.id.btn_enter)
     public void doLogin() {
-        if(getEmail().isEmpty()) {
+        if (getEmail().isEmpty()) {
             showErrorMessage(getString(R.string.error_email_required));
             return;
         }
 
-        if(getPassword().isEmpty())
-        {
+        if (getPassword().isEmpty()) {
             showErrorMessage(getString(R.string.error_password_required));
             return;
         }
 
+        disableBtnEnter();
         presenter.doLogin();
+    }
+
+    @Override
+    public void disableBtnEnter(){
+        btnEnter.setText(R.string.authenticating);
+        btnEnter.setEnabled(false);
+    }
+
+    @Override
+    public void enableBtnEnter()
+    {
+        btnEnter.setText(R.string.btn_text_enter);
+        btnEnter.setEnabled(true);
     }
 }

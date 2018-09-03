@@ -49,6 +49,16 @@ public interface LoginMVP {
          * Faz o login do usuário
          */
         void doLogin();
+
+        /**
+         * Desativa o botão de entrar
+         */
+        void disableBtnEnter();
+
+        /**
+         * Ativa o botão de entrar
+         */
+        void enableBtnEnter();
     }
 
     interface Presenter {
